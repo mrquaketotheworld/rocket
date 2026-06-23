@@ -1,0 +1,9 @@
+{:doc_id "TASK-REGISTRY"
+ :doc_type "state"
+ :title "Реестр задач"
+ :authority "operational"
+ :layer "execution"
+ :last_updated "2026-06-23"
+ :owner "execution"
+ :next_id 1
+ :tasks []}
