@@ -19,6 +19,7 @@ layer: execution
 
 - Фреймворк Rocket инициализирован.
 - TASK-001 выполнена: в `AGENTS.md` и `engineering-profile.md` уточнено, что `pi-hermes-memory` — pi extension, а `codespaces` — pi skill.
+- TASK-002 выполнена: в `autonomy-contract.md` и `AGENTS.md` зафиксировано, что вопрос пользователя не является командой на правки.
 - Верификация: `bb docs-lint` — OK.
 
 ## Следующие шаги
@@ -31,3 +32,4 @@ layer: execution
 - GOV-GIT-WORKFLOW
 - ADR-0001
 - PROJ-ENGINEERING
+- GOV-AUTONOMY-CONTRACT

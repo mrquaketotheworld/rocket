@@ -8,8 +8,13 @@
    :status "done",
    :canonical_refs ["PROJ-ENGINEERING"],
    :owned_modules
-   ["AGENTS.md" "02-foundation/02-project/engineering-profile.md"]}],
- :next_id 2,
+   ["AGENTS.md" "02-foundation/02-project/engineering-profile.md"]}
+  {:id "TASK-002",
+   :title "Зафиксировать правило no-edit-on-question",
+   :status "done",
+   :canonical_refs ["GOV-AUTONOMY-CONTRACT"],
+   :owned_modules ["AGENTS.md" "01-standards/autonomy-contract.md"]}],
+ :next_id 3,
  :layer "execution",
  :doc_type "state",
  :owner "execution"}

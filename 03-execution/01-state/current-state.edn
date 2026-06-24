@@ -10,5 +10,5 @@
  :active_tasks []
  :blockers []
  :health "green"
- :canonical_refs ["GOV-EXECUTION-MODEL" "GOV-GIT-WORKFLOW" "ADR-0001" "PROJ-ENGINEERING"]
- :verification_summary "TASK-001 выполнена: уточнено, что pi-hermes-memory — pi extension, а codespaces — pi skill. Верификация: bb docs-lint OK."}
+ :canonical_refs ["GOV-EXECUTION-MODEL" "GOV-GIT-WORKFLOW" "ADR-0001" "PROJ-ENGINEERING" "GOV-AUTONOMY-CONTRACT"]
+ :verification_summary "TASK-002 выполнена: зафиксировано правило, что вопрос пользователя не является командой на правки. Верификация: bb docs-lint OK."}

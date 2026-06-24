@@ -20,6 +20,8 @@
   pi extension `pi-hermes-memory` через `pi install npm:pi-hermes-memory` и pi skill
   `codespaces` через `npx skills add diskd-ai/codespaces` (глобально или в проекте).
   Подробности — в [engineering-profile.md](02-foundation/02-project/engineering-profile.md).
+- **Вопрос — не команда на правки.** Если пользователь задаёт вопрос, отвечай на вопрос и не
+  меняй файлы/код/Git/operational state. Правки делай только при явной команде на изменение.
 
 ## Порядок чтения (short path)
 
