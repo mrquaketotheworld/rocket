@@ -23,10 +23,11 @@ layer: execution
 - Верификация: `bb docs-lint` — OK.
 - TASK-003 выполнена: закрыты фундаментальные gaps документации, добавлены standards/features/ADR для docs-as-foundation, execution state, memory, security, language extensibility; уточнена автоматизация claim/done.
 - TASK-004 выполнена: исправлены foundation gaps без language pack — Git/worktree, state-lint, downstream init/export/reset, versioning/changelog.
+- TASK-005 выполнена: TODO.md и оставшиеся пункты без language pack — examples, scripts-test, docs-lint hardening, document lifecycle, localization/doc IDs, project-init tooling.
 
 ## Следующие шаги
 
-- Language pack contract/template остаётся отдельным будущим направлением.
+- Language pack остаётся отдельным будущим направлением.
 
 ## Входы
 
@@ -46,3 +47,5 @@ layer: execution
 - GOV-VERSIONING-POLICY
 - FEAT-STATE-LINT
 - FEAT-PROJECT-INIT-EXPORT
+- GOV-DOCUMENT-LIFECYCLE
+- GOV-LOCALIZATION-IDS

@@ -1,0 +1,5 @@
+{:tasks
+ {docs-lint  {:doc "Проверка консистентности документации"
+              :task (load-file "../../05-scripts/docs_lint.clj")}
+  state-lint {:doc "Проверка операционного состояния"
+              :task (load-file "../../05-scripts/state_lint.clj")}}}

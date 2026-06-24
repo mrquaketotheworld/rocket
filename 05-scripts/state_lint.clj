@@ -63,13 +63,14 @@
       (doseq [[id group] (group-by identity ids)]
         (when (> (count group) 1)
           (err errors "task-registry.edn" (str "дублирующийся task id " id))))
-      (when-let [max-n (->> ids
-                            (keep #(second (re-find #"TASK-(\d+)" (or % ""))))
-                            (map #(Integer/parseInt %))
-                            seq
-                            (apply max))]
-        (when (<= (:next_id registry) max-n)
-          (err errors "task-registry.edn" (str ":next_id " (:next_id registry) " не больше максимального task id " max-n)))))
+      (let [nums (->> ids
+                      (keep #(second (re-find #"TASK-(\d+)" (or % ""))))
+                      (map #(Integer/parseInt %))
+                      seq)]
+        (when nums
+          (let [max-n (apply max nums)]
+            (when (<= (:next_id registry) max-n)
+              (err errors "task-registry.edn" (str ":next_id " (:next_id registry) " не больше максимального task id " max-n)))))))
     (doseq [t tasks] (lint-task! errors t))
     (when-not (= "STATE-CURRENT" (:doc_id state))
       (err errors "current-state.edn" ":doc_id должен быть STATE-CURRENT"))

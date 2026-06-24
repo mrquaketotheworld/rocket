@@ -17,6 +17,7 @@ layer: knowledge
 
 - [document-principles.md](document-principles.md) — иерархия доверия, SSoT, атомарность,
   reconstructability.
+- [document-lifecycle.md](document-lifecycle.md) — статусы, supersede, удаление и архивация.
 - [doc-contract.md](doc-contract.md) — обязательный frontmatter и стабильные ID.
 - [sync-rules.md](sync-rules.md) — doc-first, impact analysis, защита от дрейфа.
 - [foundation-contract.md](foundation-contract.md) — как устроен слой правды проекта.
@@ -25,6 +26,7 @@ layer: knowledge
 - [autonomy-contract.md](autonomy-contract.md) — границы автономии и stop conditions.
 - [git-workflow.md](git-workflow.md) — локальная Git-модель, dev как рабочее состояние.
 - [language-extension-contract.md](language-extension-contract.md) — как добавлять языки без изменения core.
+- [localization-and-ids.md](localization-and-ids.md) — язык документации, имена файлов и `doc_id`.
 - [memory-policy.md](memory-policy.md) — durable memory и роль Hermes.
 - [security-secrets.md](security-secrets.md) — secrets, auth и security-sensitive границы.
 - [versioning-policy.md](versioning-policy.md) — версии Rocket, changelog и миграции.

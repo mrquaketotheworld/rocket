@@ -50,8 +50,27 @@
     "03-execution"
     "04-templates"
     "05-scripts"
+    "bb.edn"]}
+  {:id "TASK-005",
+   :title "Реализовать оставшиеся TODO без language pack",
+   :status "done",
+   :canonical_refs
+   ["GOV-DOC-CONTRACT"
+    "GOV-EXECUTION-STATE-CONTRACT"
+    "GOV-VERSIONING-POLICY"
+    "FEAT-PROJECT-INIT-EXPORT"],
+   :owned_modules
+   ["TODO.md"
+    "README.md"
+    "CHANGELOG.md"
+    "01-standards"
+    "02-foundation"
+    "03-execution"
+    "04-templates"
+    "05-scripts"
+    "examples"
     "bb.edn"]}],
- :next_id 5,
+ :next_id 6,
  :layer "execution",
  :doc_type "state",
  :owner "execution"}

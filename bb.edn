@@ -3,6 +3,10 @@
               :task (load-file "05-scripts/docs_lint.clj")}
   state-lint {:doc "Проверка консистентности операционного состояния"
               :task (load-file "05-scripts/state_lint.clj")}
+  scripts-test {:doc "Smoke-тесты скриптов Rocket"
+                :task (load-file "05-scripts/scripts_test.clj")}
+  project-init {:doc "Создать downstream skeleton: --target PATH"
+                :task (load-file "05-scripts/project_init.clj")}
   work-claim {:doc "Взять задачу: --task TASK-XXX [--agent name]"
               :task (load-file "05-scripts/work_claim.clj")}
   work-done  {:doc "Закрыть задачу: --task TASK-XXX"

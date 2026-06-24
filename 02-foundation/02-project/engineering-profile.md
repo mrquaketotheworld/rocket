@@ -54,6 +54,8 @@ layer: knowledge
   packaging/export, команда build станет обязательной частью этого профиля.
 - **lint документации:** `bb docs-lint`.
 - **lint состояния:** `bb state-lint`.
+- **создать downstream skeleton:** `bb project-init --target PATH`.
+- **smoke-тесты скриптов:** `bb scripts-test`.
 - **взять задачу:** `bb work-claim --task TASK-XXX`.
 - **закрыть задачу:** `bb work-done --task TASK-XXX`.
 
@@ -68,8 +70,9 @@ reconstructability не выполняется.
 
 1. `bb docs-lint` — документация консистентна.
 2. `bb state-lint` — операционное состояние консистентно.
-3. Для изменений скриптов — ручная smoke-проверка затронутой команды (`bb work-claim`,
-   `bb work-done`, `bb state-lint`) на тестовой/текущей задаче в пределах scope.
+3. Для изменений скриптов — `bb scripts-test` и/или ручная smoke-проверка затронутой команды
+   (`bb work-claim`, `bb work-done`, `bb state-lint`, `bb project-init`) на тестовой/текущей
+   задаче в пределах scope.
 
 Downstream-проект объявляет свою лестницу (например: `npm run lint`, `npm test`, `npm run build`).
 

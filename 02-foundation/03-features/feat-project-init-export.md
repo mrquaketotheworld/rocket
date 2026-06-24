@@ -53,12 +53,24 @@ Downstream не наследует:
 - `03-execution/04-logs/` пустой;
 - `03-execution/05-locks/` содержит только `.gitkeep`.
 
+## Tooling
+
+`bb project-init --target PATH` создаёт downstream skeleton в пустой директории:
+
+- копирует core standards/templates/scripts;
+- исключает `.git`, locks, `.rocket-agent-id` и историю `TASK-*` core Rocket;
+- сбрасывает execution layer под новый проект;
+- сохраняет framework version в `current-state.edn`.
+
+Команда не переписывает непустой target.
+
 ## Acceptance criteria
 
 - [ ] downstream-проект получает standards/templates/scripts Rocket;
 - [ ] downstream product truth не копирует смысл core Rocket;
 - [ ] operational history core Rocket не переносится как история downstream;
-- [ ] после reset проходят `bb docs-lint` и `bb state-lint`.
+- [ ] после reset проходят `bb docs-lint` и `bb state-lint`;
+- [ ] `bb project-init --target PATH` создаёт skeleton только в пустом target.
 
 ## Связанные решения
 

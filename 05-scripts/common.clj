@@ -10,9 +10,9 @@
   (str (apply fs/path root parts)))
 
 (defn md-files
-  "Все markdown-файлы в каталогах слоёв знаний и шаблонов."
+  "Все markdown-файлы в каталогах знаний, исполнения и шаблонов."
   []
-  (->> ["01-standards" "02-foundation" "04-templates"]
+  (->> ["01-standards" "02-foundation" "03-execution" "04-templates"]
        (mapcat (fn [d]
                  (let [p (fs/path root d)]
                    (when (fs/exists? p)

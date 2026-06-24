@@ -7,6 +7,9 @@ owner: architecture
 last_updated: YYYY-MM-DD
 authority: canonical
 layer: knowledge
+supersedes: []
+superseded_by:
+related_adrs: []
 ---
 
 # ADR-XXXX: <Название>
@@ -26,6 +29,20 @@ Proposed | Accepted | Superseded.
 ## Последствия
 
 Что меняется после принятия — плюсы, минусы, что становится проще/сложнее.
+
+## Compatibility impact
+
+Что ломается или остаётся совместимым для существующих проектов/документов/скриптов.
+
+## Migration notes
+
+Что нужно сделать существующим downstream-проектам или агентам после принятия решения.
+
+## Связанные ADR
+
+- supersedes: ADR-XXXX или пусто
+- superseded_by: ADR-XXXX или пусто
+- related: ADR-XXXX
 
 ## Границы
 

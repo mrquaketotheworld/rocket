@@ -67,7 +67,8 @@ companion-shell и swarm-режимы. Осталось только то, чт�
 4. Добавьте feature docs для первого поведения в `02-foundation/03-features/`.
 5. Установите обязательные инструменты pi: extension `pi-hermes-memory` и skill `codespaces`.
 6. Проверьте документацию и состояние: `bb docs-lint`, `bb state-lint`.
-7. Создайте первую задачу, заклеймьте её и работайте по циклу ниже.
+7. Для создания downstream skeleton можно использовать `bb project-init --target ../my-project`.
+8. Создайте первую задачу, заклеймьте её и работайте по циклу ниже.
 
 ## Рабочий цикл
 

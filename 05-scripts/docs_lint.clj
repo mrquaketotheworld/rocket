@@ -21,7 +21,7 @@
 (defn root-md-files
   "Markdown-файлы корня (README/AGENTS/CLAUDE) дополнительно проверяются на ссылки."
   []
-  (->> ["README.md" "AGENTS.md" "CLAUDE.md"]
+  (->> ["README.md" "AGENTS.md" "CLAUDE.md" "CHANGELOG.md" "TODO.md"]
        (map #(str (fs/path common/root %)))
        (filter fs/exists?)))
 
@@ -118,7 +118,32 @@
         dup     (->> (group-by first ids)
                      (filter (fn [[_ v]] (> (count v) 1)))
                      (into {}))
-        file-errs (filter (comp seq :errors) results)
+        extra-errors (atom [])
+        _ (let [version-path (fs/path common/root "VERSION")
+                readme-path  (fs/path common/root "README.md")]
+            (when (and (fs/exists? version-path) (fs/exists? readme-path))
+              (let [version (str/trim (slurp (str version-path)))
+                    readme  (slurp (str readme-path))]
+                (when-not (str/includes? readme version)
+                  (swap! extra-errors conj {:path readme-path
+                                            :errors [(str "README.md не содержит текущую VERSION: " version)]})))))
+        _ (let [feature-index (fs/path common/root "02-foundation" "03-features" "README.md")]
+            (when (fs/exists? feature-index)
+              (let [idx (slurp (str feature-index))]
+                (doseq [p (fs/glob (fs/path common/root "02-foundation" "03-features") "*.md")]
+                  (let [name (str (fs/file-name p))]
+                    (when (and (not= name "README.md") (not (str/includes? idx name)))
+                      (swap! extra-errors conj {:path feature-index
+                                                :errors [(str "feature отсутствует в индексе: " name)]})))))))
+        _ (let [adr-index (fs/path common/root "02-foundation" "04-decisions" "README.md")]
+            (when (fs/exists? adr-index)
+              (let [idx (slurp (str adr-index))]
+                (doseq [p (fs/glob (fs/path common/root "02-foundation" "04-decisions") "ADR-*.md")]
+                  (let [name (str (fs/file-name p))]
+                    (when-not (str/includes? idx name)
+                      (swap! extra-errors conj {:path adr-index
+                                                :errors [(str "ADR отсутствует в индексе: " name)]})))))))
+        file-errs (concat (filter (comp seq :errors) results) @extra-errors)
         total-err (+ (count file-errs) (count dup))]
     (println (str "docs-lint: проверено файлов " (count results)))
     (doseq [{:keys [path errors]} file-errs]

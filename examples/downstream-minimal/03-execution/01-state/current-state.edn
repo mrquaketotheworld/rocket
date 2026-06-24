@@ -1,0 +1,14 @@
+{:doc_id "STATE-CURRENT"
+ :doc_type "state"
+ :title "Текущее состояние проекта"
+ :authority "operational"
+ :layer "execution"
+ :status "active"
+ :last_updated "2026-06-24"
+ :owner "execution"
+ :framework_version "v0.1.0"
+ :active_tasks []
+ :blockers []
+ :health "green"
+ :canonical_refs ["PROD-INTENT" "PROD-SCOPE" "PROJ-ENGINEERING" "FEAT-HELLO"]
+ :verification_summary "Минимальный downstream example готов."}
