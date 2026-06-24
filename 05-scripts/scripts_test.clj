@@ -21,6 +21,7 @@
       (run! common/root (str "bb project-init --target " target))
       (run! target "bb docs-lint")
       (run! target "bb state-lint")
+      (run! target "bb commit-lint --message \"TASK-999: smoke commit lint\"")
       (println "OK: scripts smoke tests passed")
       (finally
         (fs/delete-tree tmp)))))

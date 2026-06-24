@@ -56,6 +56,8 @@ layer: knowledge
 - **lint состояния:** `bb state-lint`.
 - **создать downstream skeleton:** `bb project-init --target PATH`.
 - **smoke-тесты скриптов:** `bb scripts-test`.
+- **проверка commit message:** `bb commit-lint`.
+- **установка Git hooks:** `bb install-hooks`.
 - **взять задачу:** `bb work-claim --task TASK-XXX`.
 - **закрыть задачу:** `bb work-done --task TASK-XXX`.
 
@@ -71,8 +73,9 @@ reconstructability не выполняется.
 1. `bb docs-lint` — документация консистентна.
 2. `bb state-lint` — операционное состояние консистентно.
 3. Для изменений скриптов — `bb scripts-test` и/или ручная smoke-проверка затронутой команды
-   (`bb work-claim`, `bb work-done`, `bb state-lint`, `bb project-init`) на тестовой/текущей
-   задаче в пределах scope.
+   (`bb work-claim`, `bb work-done`, `bb state-lint`, `bb project-init`, `bb commit-lint`) на
+   тестовой/текущей задаче в пределах scope.
+4. После локального commit — `bb commit-lint`.
 
 Downstream-проект объявляет свою лестницу (например: `npm run lint`, `npm test`, `npm run build`).
 

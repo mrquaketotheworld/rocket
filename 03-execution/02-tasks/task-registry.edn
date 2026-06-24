@@ -79,8 +79,19 @@
    ["TODO.md"
     "01-standards/execution-model.md"
     "01-standards/execution-state-contract.md"
-    "03-execution"]}],
- :next_id 7,
+    "03-execution"]}
+  {:id "TASK-007",
+   :title "Добавить проверку task-prefixed commit messages",
+   :status "done",
+   :canonical_refs ["GOV-GIT-WORKFLOW" "PROJ-ENGINEERING"],
+   :owned_modules
+   ["01-standards/git-workflow.md"
+    "02-foundation/02-project/engineering-profile.md"
+    "03-execution"
+    "05-scripts"
+    ".githooks"
+    "bb.edn"]}],
+ :next_id 8,
  :layer "execution",
  :doc_type "state",
  :owner "execution"}

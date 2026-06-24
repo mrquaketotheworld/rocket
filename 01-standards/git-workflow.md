@@ -65,8 +65,39 @@ layer: knowledge
 
 - не оставлять рабочее дерево грязным после завершённой задачи;
 - не смешивать несколько независимых задач в одном commit;
-- commit message должен кратко отражать изменение (`docs: ...`, `feat: ...`, `fix: ...`);
+- commit message должен начинаться с ID задачи: `TASK-XXX: краткое описание`;
+- запрещены commit messages без task prefix, включая `docs: ...`, `feat: ...`, `fix: ...`,
+  `chore: ...`;
+- перед/после commit используется `bb commit-lint`; для автоматической защиты включается hook
+  через `bb install-hooks`;
 - push в remote не является частью закрытия задачи.
+
+## Commit hooks
+
+Rocket предоставляет Git `commit-msg` hook в `.githooks/commit-msg`. Он проверяет, что первая
+строка commit message соответствует формату:
+
+```text
+TASK-XXX: краткое описание
+```
+
+Установка hook path:
+
+```bash
+bb install-hooks
+```
+
+Ручная проверка последнего commit:
+
+```bash
+bb commit-lint
+```
+
+Проверка конкретного сообщения:
+
+```bash
+bb commit-lint --message "TASK-007: add commit message lint"
+```
 
 ## Ручная процедура worktree для параллельной работы
 

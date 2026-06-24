@@ -25,6 +25,7 @@ layer: execution
 - TASK-004 выполнена: исправлены foundation gaps без language pack — Git/worktree, state-lint, downstream init/export/reset, versioning/changelog.
 - TASK-005 выполнена: TODO.md и оставшиеся пункты без language pack — examples, scripts-test, docs-lint hardening, document lifecycle, localization/doc IDs, project-init tooling.
 - TASK-006 выполнена: зафиксировано правило, что `TODO.md` — transient-файл только для текущей работы и очищается после выполнения всех пунктов.
+- TASK-007 выполнена: добавлены `bb commit-lint` и Git `commit-msg` hook для формата `TASK-XXX: ...`.
 
 ## Следующие шаги
 

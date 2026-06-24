@@ -7,6 +7,10 @@
                 :task (load-file "05-scripts/scripts_test.clj")}
   project-init {:doc "Создать downstream skeleton: --target PATH"
                 :task (load-file "05-scripts/project_init.clj")}
+  commit-lint {:doc "Проверить commit message: TASK-XXX: ..."
+               :task (load-file "05-scripts/commit_lint.clj")}
+  install-hooks {:doc "Установить Git hooks Rocket"
+                 :task (load-file "05-scripts/install_hooks.clj")}
   work-claim {:doc "Взять задачу: --task TASK-XXX [--agent name]"
               :task (load-file "05-scripts/work_claim.clj")}
   work-done  {:doc "Закрыть задачу: --task TASK-XXX"
