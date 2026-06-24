@@ -56,6 +56,7 @@ layer: knowledge
 - **lint состояния:** `bb state-lint`.
 - **создать downstream skeleton:** `bb project-init --target PATH`.
 - **smoke-тесты скриптов:** `bb scripts-test`.
+- **полная pre-commit верификация:** `bb verify`.
 - **проверка commit message:** `bb commit-lint`.
 - **установка Git hooks:** `bb install-hooks`.
 - **взять задачу:** `bb work-claim --task TASK-XXX`.
@@ -70,8 +71,9 @@ reconstructability не выполняется.
 
 Для изменений в самом фреймворке:
 
-1. `bb docs-lint` — документация консистентна.
-2. `bb state-lint` — операционное состояние консистентно.
+1. `bb verify` — полная pre-commit проверка (`bb docs-lint`, `bb state-lint`, `bb scripts-test`).
+2. Для точечной диагностики можно запускать отдельные команды: `bb docs-lint`, `bb state-lint`,
+   `bb scripts-test`.
 3. Для изменений скриптов — `bb scripts-test` и/или ручная smoke-проверка затронутой команды
    (`bb work-claim`, `bb work-done`, `bb state-lint`, `bb project-init`, `bb commit-lint`) на
    тестовой/текущей задаче в пределах scope.

@@ -5,6 +5,8 @@
               :task (load-file "05-scripts/state_lint.clj")}
   scripts-test {:doc "Smoke-тесты скриптов Rocket"
                 :task (load-file "05-scripts/scripts_test.clj")}
+  verify {:doc "Полная pre-commit верификация Rocket"
+          :task (load-file "05-scripts/verify.clj")}
   project-init {:doc "Создать downstream skeleton: --target PATH"
                 :task (load-file "05-scripts/project_init.clj")}
   commit-lint {:doc "Проверить commit message: TASK-XXX: ..."

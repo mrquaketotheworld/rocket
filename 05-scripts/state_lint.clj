@@ -20,6 +20,21 @@
 (defn checked? [content]
   (boolean (re-find #"(?m)^- \[x\]" content)))
 
+(defn todo-items [content]
+  (re-seq #"(?m)^- \[([ xX])\]" content))
+
+(defn lint-todo! [errors in-progress]
+  (let [path (common/rel "TODO.md")]
+    (when (fs/exists? path)
+      (let [content (slurp path)
+            trimmed (str/trim content)
+            items (todo-items content)]
+        (when (and (empty? in-progress) (not (str/blank? trimmed)))
+          (err errors "TODO.md" "TODO.md должен быть пустым, если нет in_progress задач"))
+        (when (and (seq items)
+                   (every? #(contains? #{"x" "X"} (second %)) items))
+          (err errors "TODO.md" "все пункты TODO.md выполнены — файл нужно очистить"))))))
+
 (defn lint-task! [errors registry-task]
   (let [id (:id registry-task)
         path (common/rel "03-execution" "02-tasks" (str id ".md"))]
@@ -80,7 +95,8 @@
           active (set (:active_tasks state))]
       (when-not (= in-progress active)
         (err errors "current-state.edn"
-             (str ":active_tasks " active " не совпадает с in_progress задачами " in-progress))))
+             (str ":active_tasks " active " не совпадает с in_progress задачами " in-progress)))
+      (lint-todo! errors in-progress))
     (when-not (fs/exists? session-path)
       (err errors "current-session.md" "файл текущей сессии отсутствует"))
     (println (str "state-lint: проверено задач " (count tasks)))

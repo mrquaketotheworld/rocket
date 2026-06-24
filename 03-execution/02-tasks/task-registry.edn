@@ -90,8 +90,23 @@
     "03-execution"
     "05-scripts"
     ".githooks"
+    "bb.edn"]}
+  {:id "TASK-008",
+   :title "Добавить verify, task-aware commit-lint и TODO lint",
+   :status "done",
+   :canonical_refs
+   ["GOV-GIT-WORKFLOW"
+    "GOV-EXECUTION-STATE-CONTRACT"
+    "PROJ-ENGINEERING"],
+   :owned_modules
+   ["01-standards/git-workflow.md"
+    "01-standards/execution-state-contract.md"
+    "02-foundation/02-project/engineering-profile.md"
+    "03-execution"
+    "05-scripts"
+    "TODO.md"
     "bb.edn"]}],
- :next_id 8,
+ :next_id 9,
  :layer "execution",
  :doc_type "state",
  :owner "execution"}

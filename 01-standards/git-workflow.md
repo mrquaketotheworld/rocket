@@ -93,6 +93,9 @@ bb install-hooks
 bb commit-lint
 ```
 
+`bb commit-lint` проверяет не только формат, но и наличие `TASK-XXX` в
+`03-execution/02-tasks/task-registry.edn`.
+
 Проверка конкретного сообщения:
 
 ```bash
