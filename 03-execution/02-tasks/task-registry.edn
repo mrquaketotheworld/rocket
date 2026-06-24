@@ -32,8 +32,26 @@
     "02-foundation"
     "03-execution"
     "04-templates"
-    "05-scripts"]}],
- :next_id 4,
+    "05-scripts"]}
+  {:id "TASK-004",
+   :title "Закрыть оставшиеся foundation gaps без language pack",
+   :status "done",
+   :canonical_refs
+   ["GOV-GIT-WORKFLOW"
+    "GOV-EXECUTION-STATE-CONTRACT"
+    "PROJ-ENGINEERING"
+    "FEAT-ROCKET-SKELETON"],
+   :owned_modules
+   ["README.md"
+    "CHANGELOG.md"
+    "VERSION"
+    "01-standards"
+    "02-foundation"
+    "03-execution"
+    "04-templates"
+    "05-scripts"
+    "bb.edn"]}],
+ :next_id 5,
  :layer "execution",
  :doc_type "state",
  :owner "execution"}

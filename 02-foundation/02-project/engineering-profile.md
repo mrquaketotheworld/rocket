@@ -49,10 +49,11 @@ layer: knowledge
   `bb docs-lint` для проверки готовности документации.
 - **run:** N/A для core Rocket — это документационный фреймворк и набор локальных скриптов, а
   не долгоживущий сервис. Запуск downstream-продукта объявляется в его engineering profile.
-- **test:** `bb docs-lint`.
+- **test:** `bb docs-lint` и `bb state-lint`.
 - **build:** N/A для core Rocket v0.1.0 — артефакт сборки не производится. Если появится
   packaging/export, команда build станет обязательной частью этого профиля.
 - **lint документации:** `bb docs-lint`.
+- **lint состояния:** `bb state-lint`.
 - **взять задачу:** `bb work-claim --task TASK-XXX`.
 - **закрыть задачу:** `bb work-done --task TASK-XXX`.
 
@@ -66,8 +67,9 @@ reconstructability не выполняется.
 Для изменений в самом фреймворке:
 
 1. `bb docs-lint` — документация консистентна.
-2. Для изменений скриптов — ручная smoke-проверка затронутой команды (`bb work-claim`,
-   `bb work-done`) на тестовой/текущей задаче в пределах scope.
+2. `bb state-lint` — операционное состояние консистентно.
+3. Для изменений скриптов — ручная smoke-проверка затронутой команды (`bb work-claim`,
+   `bb work-done`, `bb state-lint`) на тестовой/текущей задаче в пределах scope.
 
 Downstream-проект объявляет свою лестницу (например: `npm run lint`, `npm test`, `npm run build`).
 

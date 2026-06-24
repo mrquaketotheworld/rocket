@@ -22,10 +22,11 @@ layer: execution
 - TASK-002 выполнена: в `autonomy-contract.md` и `AGENTS.md` зафиксировано, что вопрос пользователя не является командой на правки.
 - Верификация: `bb docs-lint` — OK.
 - TASK-003 выполнена: закрыты фундаментальные gaps документации, добавлены standards/features/ADR для docs-as-foundation, execution state, memory, security, language extensibility; уточнена автоматизация claim/done.
+- TASK-004 выполнена: исправлены foundation gaps без language pack — Git/worktree, state-lint, downstream init/export/reset, versioning/changelog.
 
 ## Следующие шаги
 
-- Продолжить развитие language packs и downstream templates по мере появления конкретных языков.
+- Language pack contract/template остаётся отдельным будущим направлением.
 
 ## Входы
 
@@ -42,3 +43,6 @@ layer: execution
 - GOV-SECURITY-SECRETS
 - ADR-0002
 - ADR-0003
+- GOV-VERSIONING-POLICY
+- FEAT-STATE-LINT
+- FEAT-PROJECT-INIT-EXPORT

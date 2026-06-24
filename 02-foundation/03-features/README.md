@@ -25,6 +25,8 @@ layer: knowledge
 - [FEAT-WORK-CLAIM](feat-work-claim.md) — claim задачи `bb work-claim`.
 - [FEAT-WORK-DONE](feat-work-done.md) — закрытие задачи `bb work-done`.
 - [FEAT-ROCKET-SKELETON](feat-rocket-skeleton.md) — каркас проекта Rocket.
+- [FEAT-STATE-LINT](feat-state-lint.md) — проверка операционного состояния `bb state-lint`.
+- [FEAT-PROJECT-INIT-EXPORT](feat-project-init-export.md) — инициализация и экспорт downstream-проекта.
 
 ## Шаблон
 

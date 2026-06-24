@@ -41,14 +41,16 @@ layer: knowledge
 
 ### Несколько агентов параллельно
 
-Чтобы параллельная работа не ломала запускаемый `dev`, каждый агент изолируется:
+Чтобы параллельная работа не ломала запускаемый `dev`, каждый агент изолируется вручную:
 
-1. claim задачи создаёт локальную ветку `work/<agent>/<task>` из `dev`;
+1. человек или агент создаёт локальную ветку `work/<agent>/<task>` из `dev`;
 2. для неё создаётся отдельный worktree (отдельная папка на диске);
-3. агент меняет файлы только в своём worktree;
-4. `work-done` мержит ветку обратно в `dev` (merge `--no-ff`, одна задача = один merge-commit)
-   и удаляет временный worktree;
-5. главный worktree всё это время остаётся на `dev` и запускаем.
+3. агент выполняет claim задачи внутри своего worktree;
+4. агент меняет файлы только в своём worktree;
+5. после закрытия задачи агент делает commit в рабочей ветке;
+6. merge обратно в `dev` и удаление временного worktree выполняются отдельными Git-командами,
+   не командой `work-done`;
+7. главный worktree всё это время остаётся на `dev` и запускаем.
 
 Параллельные агенты безопасны только при непересекающихся `owned_modules` (см.
 [execution-model.md](execution-model.md)).
@@ -72,9 +74,10 @@ layer: knowledge
 
 1. из главного worktree на `dev` выполнить `git worktree add ../rocket-TASK-XXX -b work/<agent>/TASK-XXX dev`;
 2. агент работает только в созданном worktree;
-3. после `bb work-done --task TASK-XXX` агент делает commit в рабочей ветке;
-4. человек или агент в пределах scope мержит ветку обратно в `dev` через `git merge --no-ff`;
-5. временный worktree удаляется через `git worktree remove`.
+3. агент выполняет `bb work-claim --task TASK-XXX` внутри созданного worktree;
+4. после `bb work-done --task TASK-XXX` агент делает commit в рабочей ветке;
+5. человек или агент в пределах scope мержит ветку обратно в `dev` через `git merge --no-ff`;
+6. временный worktree удаляется через `git worktree remove`.
 
 Если merge конфликтует вне `owned_modules` задачи — stop condition.
 

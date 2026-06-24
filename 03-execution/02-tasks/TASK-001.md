@@ -39,6 +39,11 @@ owned_modules:
 
 - `bb docs-lint`
 
+## Evidence
+
+- `bb docs-lint` — OK.
+- Commit: `5c46f50 docs: clarify required pi tools`.
+
 ## Definition of Done
 
 - [x] документация уточняет, что `pi-hermes-memory` — pi extension

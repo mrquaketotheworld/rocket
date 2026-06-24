@@ -66,13 +66,13 @@ companion-shell и swarm-режимы. Осталось только то, чт�
    runtime, package manager, bootstrap/run/test/build и verification ladder.
 4. Добавьте feature docs для первого поведения в `02-foundation/03-features/`.
 5. Установите обязательные инструменты pi: extension `pi-hermes-memory` и skill `codespaces`.
-6. Проверьте документацию: `bb docs-lint`.
+6. Проверьте документацию и состояние: `bb docs-lint`, `bb state-lint`.
 7. Создайте первую задачу, заклеймьте её и работайте по циклу ниже.
 
 ## Рабочий цикл
 
 1. Описать или обновить правду в [02-foundation/](02-foundation).
-2. Проверить документацию: `bb docs-lint`.
+2. Проверить документацию и состояние: `bb docs-lint`, `bb state-lint`.
 3. Взять задачу из реестра, заклеймить её.
 4. Реализовать код по документации.
 5. Прогнать проверки проекта (lint/test, объявленные в `engineering-profile.md`).

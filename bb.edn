@@ -1,6 +1,8 @@
 {:tasks
  {docs-lint  {:doc "Проверка консистентности канонической документации"
               :task (load-file "05-scripts/docs_lint.clj")}
+  state-lint {:doc "Проверка консистентности операционного состояния"
+              :task (load-file "05-scripts/state_lint.clj")}
   work-claim {:doc "Взять задачу: --task TASK-XXX [--agent name]"
               :task (load-file "05-scripts/work_claim.clj")}
   work-done  {:doc "Закрыть задачу: --task TASK-XXX"

@@ -27,6 +27,7 @@ layer: knowledge
 - [language-extension-contract.md](language-extension-contract.md) — как добавлять языки без изменения core.
 - [memory-policy.md](memory-policy.md) — durable memory и роль Hermes.
 - [security-secrets.md](security-secrets.md) — secrets, auth и security-sensitive границы.
+- [versioning-policy.md](versioning-policy.md) — версии Rocket, changelog и миграции.
 
 ## Принцип
 

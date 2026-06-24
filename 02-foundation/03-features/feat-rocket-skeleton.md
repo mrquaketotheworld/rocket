@@ -30,7 +30,8 @@ execution state, шаблоны и минимальную локальную а�
 - `bb.edn` — команды Rocket.
 
 Downstream-проект переписывает product/project truth под себя, но не ломает core standards без
-явного ADR.
+явного ADR. Подробный init/export/reset lifecycle описан в
+[FEAT-PROJECT-INIT-EXPORT](feat-project-init-export.md).
 
 ## Быстрый старт downstream-проекта
 
@@ -40,7 +41,7 @@ Downstream-проект переписывает product/project truth под с
 4. Указать bootstrap/run/test/build и verification ladder.
 5. Добавить feature docs для первого поведения.
 6. Установить обязательные инструменты pi.
-7. Прогнать `bb docs-lint`.
+7. Прогнать `bb docs-lint` и `bb state-lint`.
 8. Завести и выполнить первую задачу.
 
 ## Acceptance criteria

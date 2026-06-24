@@ -39,6 +39,11 @@ owned_modules:
 
 - `bb docs-lint`
 
+## Evidence
+
+- `bb docs-lint` — OK.
+- Commit: `0bf32cb docs: treat questions as informational`.
+
 ## Definition of Done
 
 - [x] правило зафиксировано в canonical docs
