@@ -69,8 +69,18 @@
     "04-templates"
     "05-scripts"
     "examples"
-    "bb.edn"]}],
- :next_id 6,
+    "bb.edn"]}
+  {:id "TASK-006",
+   :title "Зафиксировать transient-правило TODO.md",
+   :status "done",
+   :canonical_refs
+   ["GOV-EXECUTION-MODEL" "GOV-EXECUTION-STATE-CONTRACT"],
+   :owned_modules
+   ["TODO.md"
+    "01-standards/execution-model.md"
+    "01-standards/execution-state-contract.md"
+    "03-execution"]}],
+ :next_id 7,
  :layer "execution",
  :doc_type "state",
  :owner "execution"}
