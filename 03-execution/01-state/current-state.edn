@@ -4,11 +4,11 @@
  :authority "operational"
  :layer "execution"
  :status "active"
- :last_updated "2026-06-23"
+ :last_updated "2026-06-24"
  :owner "execution"
  :framework_version "v0.1.0"
  :active_tasks []
  :blockers []
  :health "green"
- :canonical_refs ["GOV-EXECUTION-MODEL" "GOV-GIT-WORKFLOW" "ADR-0001"]
- :verification_summary "Фреймворк инициализирован. Активных задач нет. Готов к первой работе."}
+ :canonical_refs ["GOV-EXECUTION-MODEL" "GOV-GIT-WORKFLOW" "ADR-0001" "PROJ-ENGINEERING"]
+ :verification_summary "TASK-001 выполнена: уточнено, что pi-hermes-memory — pi extension, а codespaces — pi skill. Верификация: bb docs-lint OK."}

@@ -16,6 +16,10 @@
   команды человека.
 - **Стек любой.** Язык продукта зафиксирован в `engineering-profile.md`. Не навязывай Clojure
   или другой стек — он используется только внутри самого фреймворка, если нужно.
+- **Обязательные инструменты pi.** До начала работы убедись, что установлены:
+  pi extension `pi-hermes-memory` через `pi install npm:pi-hermes-memory` и pi skill
+  `codespaces` через `npx skills add diskd-ai/codespaces` (глобально или в проекте).
+  Подробности — в [engineering-profile.md](02-foundation/02-project/engineering-profile.md).
 
 ## Порядок чтения (short path)
 

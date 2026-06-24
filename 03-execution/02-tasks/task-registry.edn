@@ -1,9 +1,15 @@
-{:doc_id "TASK-REGISTRY"
- :doc_type "state"
- :title "Реестр задач"
- :authority "operational"
- :layer "execution"
- :last_updated "2026-06-23"
- :owner "execution"
- :next_id 1
- :tasks []}
+{:doc_id "TASK-REGISTRY",
+ :authority "operational",
+ :last_updated "2026-06-24",
+ :title "Реестр задач",
+ :tasks
+ [{:id "TASK-001",
+   :title "Уточнить типы обязательных инструментов pi",
+   :status "done",
+   :canonical_refs ["PROJ-ENGINEERING"],
+   :owned_modules
+   ["AGENTS.md" "02-foundation/02-project/engineering-profile.md"]}],
+ :next_id 2,
+ :layer "execution",
+ :doc_type "state",
+ :owner "execution"}
