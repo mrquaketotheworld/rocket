@@ -2,6 +2,7 @@
 
 (ns work-done
   (:require [common]
+            [clojure.string :as str]
             [babashka.fs :as fs]))
 
 (defn parse-args [args]
@@ -14,6 +15,16 @@
 
 (def locks-dir (common/rel "03-execution" "05-locks"))
 
+(defn task-file [task-id]
+  (common/rel "03-execution" "02-tasks" (str task-id ".md")))
+
+(defn update-task-file-status! [task-id status]
+  (let [path (task-file task-id)]
+    (when (fs/exists? path)
+      (let [content (slurp path)
+            updated (str/replace-first content #"(?m)^status:\s*\S+" (str "status: " status))]
+        (spit path updated)))))
+
 (defn -main []
   (let [m       (parse-args *command-line-args*)
         task-id (:task m)]
@@ -25,7 +36,7 @@
         (println (str "[work-done] ERROR: нет активного claim для " task-id
                       ". Сначала bb work-claim --task " task-id))
         (System/exit 1))
-      ;; обновить статус задачи в реестре
+      ;; обновить статус задачи в реестре и файле задачи
       (let [reg-path (common/rel "03-execution" "02-tasks" "task-registry.edn")
             registry (common/read-edn reg-path)
             tasks    (mapv (fn [t]
@@ -34,9 +45,11 @@
                                t))
                            (:tasks registry))]
         (spit reg-path (with-out-str (clojure.pprint/pprint (assoc registry :tasks tasks)))))
+      (update-task-file-status! task-id "done")
       (fs/delete lock-file)
-      (println (str "[work-done] OK: " task-id " закрыта, claim снят."))
-      (println "  Не забудьте обновить current-state.edn и current-session.md, если состояние изменилось.")
+      (println (str "[work-done] OK: " task-id " закрыта, claim снят, task file и registry переведены в done."))
+      (println "  Убедитесь, что current-state.edn и current-session.md уже обновлены.")
+      (println "  Если задача меняла репозиторий, сделайте локальный commit в dev.")
       (println "  Push в remote выполняется только по явной команде человека."))))
 
 (-main)

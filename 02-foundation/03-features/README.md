@@ -21,7 +21,10 @@ layer: knowledge
 
 ## Функции
 
-(Пусто на старте проекта. Добавляются по мере описания поведения продукта.)
+- [FEAT-DOCS-LINT](feat-docs-lint.md) — проверка документации `bb docs-lint`.
+- [FEAT-WORK-CLAIM](feat-work-claim.md) — claim задачи `bb work-claim`.
+- [FEAT-WORK-DONE](feat-work-done.md) — закрытие задачи `bb work-done`.
+- [FEAT-ROCKET-SKELETON](feat-rocket-skeleton.md) — каркас проекта Rocket.
 
 ## Шаблон
 

@@ -21,8 +21,12 @@ layer: knowledge
 - [sync-rules.md](sync-rules.md) — doc-first, impact analysis, защита от дрейфа.
 - [foundation-contract.md](foundation-contract.md) — как устроен слой правды проекта.
 - [execution-model.md](execution-model.md) — задачи, claim, жизненный цикл.
+- [execution-state-contract.md](execution-state-contract.md) — формат registry/state/session/logs.
 - [autonomy-contract.md](autonomy-contract.md) — границы автономии и stop conditions.
 - [git-workflow.md](git-workflow.md) — локальная Git-модель, dev как рабочее состояние.
+- [language-extension-contract.md](language-extension-contract.md) — как добавлять языки без изменения core.
+- [memory-policy.md](memory-policy.md) — durable memory и роль Hermes.
+- [security-secrets.md](security-secrets.md) — secrets, auth и security-sensitive границы.
 
 ## Принцип
 

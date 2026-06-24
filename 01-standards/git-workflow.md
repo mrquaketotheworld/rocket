@@ -53,6 +53,31 @@ layer: knowledge
 Параллельные агенты безопасны только при непересекающихся `owned_modules` (см.
 [execution-model.md](execution-model.md)).
 
+## Commit discipline
+
+Если задача изменила репозиторий, её закрытие завершается локальным commit в `dev` или в
+соответствующей `work/<agent>/<task>` ветке перед merge. Одна bounded задача должна давать один
+понятный commit или merge-commit.
+
+Правила:
+
+- не оставлять рабочее дерево грязным после завершённой задачи;
+- не смешивать несколько независимых задач в одном commit;
+- commit message должен кратко отражать изменение (`docs: ...`, `feat: ...`, `fix: ...`);
+- push в remote не является частью закрытия задачи.
+
+## Ручная процедура worktree для параллельной работы
+
+Если одновременно работают несколько агентов:
+
+1. из главного worktree на `dev` выполнить `git worktree add ../rocket-TASK-XXX -b work/<agent>/TASK-XXX dev`;
+2. агент работает только в созданном worktree;
+3. после `bb work-done --task TASK-XXX` агент делает commit в рабочей ветке;
+4. человек или агент в пределах scope мержит ветку обратно в `dev` через `git merge --no-ff`;
+5. временный worktree удаляется через `git worktree remove`.
+
+Если merge конфликтует вне `owned_modules` задачи — stop condition.
+
 ## Push в remote
 
 - Фреймворк **никогда** не пушит автоматически.

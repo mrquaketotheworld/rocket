@@ -57,16 +57,20 @@
 6. [01-standards/execution-model.md](01-standards/execution-model.md)
 7. [01-standards/autonomy-contract.md](01-standards/autonomy-contract.md)
 8. [01-standards/git-workflow.md](01-standards/git-workflow.md)
-9. [02-foundation/01-product/product-intent.md](02-foundation/01-product/product-intent.md)
-10. [02-foundation/01-product/product-scope.md](02-foundation/01-product/product-scope.md)
-11. [02-foundation/02-project/engineering-profile.md](02-foundation/02-project/engineering-profile.md)
-12. [02-foundation/02-project/glossary.md](02-foundation/02-project/glossary.md)
-13. [02-foundation/03-features/](02-foundation/03-features) — релевантные features
-14. [02-foundation/04-decisions/](02-foundation/04-decisions) — релевантные ADR
-15. [03-execution/01-state/current-state.edn](03-execution/01-state/current-state.edn)
-16. [03-execution/02-tasks/task-registry.edn](03-execution/02-tasks/task-registry.edn)
-17. соответствующий файл задачи
-18. [03-execution/03-session/current-session.md](03-execution/03-session/current-session.md)
+9. [01-standards/execution-state-contract.md](01-standards/execution-state-contract.md)
+10. [01-standards/language-extension-contract.md](01-standards/language-extension-contract.md)
+11. [01-standards/memory-policy.md](01-standards/memory-policy.md)
+12. [01-standards/security-secrets.md](01-standards/security-secrets.md)
+13. [02-foundation/01-product/product-intent.md](02-foundation/01-product/product-intent.md)
+14. [02-foundation/01-product/product-scope.md](02-foundation/01-product/product-scope.md)
+15. [02-foundation/02-project/engineering-profile.md](02-foundation/02-project/engineering-profile.md)
+16. [02-foundation/02-project/glossary.md](02-foundation/02-project/glossary.md)
+17. [02-foundation/03-features/](02-foundation/03-features) — релевантные features
+18. [02-foundation/04-decisions/](02-foundation/04-decisions) — релевантные ADR
+19. [03-execution/01-state/current-state.edn](03-execution/01-state/current-state.edn)
+20. [03-execution/02-tasks/task-registry.edn](03-execution/02-tasks/task-registry.edn)
+21. соответствующий файл задачи
+22. [03-execution/03-session/current-session.md](03-execution/03-session/current-session.md)
 
 ## Правила маршрутизации
 
@@ -94,6 +98,7 @@
 5. Реализовать изменение в пределах scope задачи.
 6. Прогнать объявленную лестницу верификации проекта.
 7. Обновить состояние, файл задачи и журнал сессии.
+8. Если задача изменила репозиторий — сделать локальный commit в `dev`.
 
 ## Правило эскалации
 

@@ -58,6 +58,17 @@ companion-shell и swarm-режимы. Осталось только то, чт�
 - [04-templates/](04-templates) — шаблоны документов.
 - [05-scripts/](05-scripts) — лёгкая автоматизация (lint документации).
 
+## Быстрый старт downstream-проекта
+
+1. Скопируйте каркас Rocket в проект.
+2. Опишите назначение и границы продукта в `02-foundation/01-product/`.
+3. Заполните `02-foundation/02-project/engineering-profile.md` под выбранный язык или языки:
+   runtime, package manager, bootstrap/run/test/build и verification ladder.
+4. Добавьте feature docs для первого поведения в `02-foundation/03-features/`.
+5. Установите обязательные инструменты pi: extension `pi-hermes-memory` и skill `codespaces`.
+6. Проверьте документацию: `bb docs-lint`.
+7. Создайте первую задачу, заклеймьте её и работайте по циклу ниже.
+
 ## Рабочий цикл
 
 1. Описать или обновить правду в [02-foundation/](02-foundation).
@@ -66,6 +77,7 @@ companion-shell и swarm-режимы. Осталось только то, чт�
 4. Реализовать код по документации.
 5. Прогнать проверки проекта (lint/test, объявленные в `engineering-profile.md`).
 6. Закрыть задачу и обновить состояние.
+7. Если задача изменила репозиторий — сделать локальный commit в `dev`.
 
 ```mermaid
 flowchart TD

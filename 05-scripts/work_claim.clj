@@ -37,6 +37,25 @@
 (defn overlap? [a b]
   (seq (clojure.set/intersection (set a) (set b))))
 
+(defn task-file [task-id]
+  (common/rel "03-execution" "02-tasks" (str task-id ".md")))
+
+(defn update-task-file-status! [task-id status]
+  (let [path (task-file task-id)]
+    (when (fs/exists? path)
+      (let [content (slurp path)
+            updated (str/replace-first content #"(?m)^status:\s*\S+" (str "status: " status))]
+        (spit path updated)))))
+
+(defn update-registry-status! [registry task-id status]
+  (let [tasks (mapv (fn [t]
+                      (if (= (:id t) task-id)
+                        (assoc t :status status)
+                        t))
+                    (:tasks registry))]
+    (spit (common/rel "03-execution" "02-tasks" "task-registry.edn")
+          (with-out-str (clojure.pprint/pprint (assoc registry :tasks tasks))))))
+
 (defn -main []
   (let [m        (parse-args *command-line-args*)
         task-id  (:task m)
@@ -48,6 +67,9 @@
           entry    (task-entry registry task-id)]
       (when-not entry
         (println (str "[work-claim] ERROR: задача " task-id " не найдена в реестре"))
+        (System/exit 1))
+      (when-not (= "ready" (:status entry))
+        (println (str "[work-claim] ERROR: задача " task-id " должна быть ready, текущий статус: " (:status entry)))
         (System/exit 1))
       (let [lock-file (str (fs/path locks-dir (str task-id ".edn")))
             owned     (:owned_modules entry)]
@@ -66,7 +88,9 @@
                        :agent agent
                        :owned_modules owned
                        :claimed_at (str (java.time.Instant/now))}))
-        (println (str "[work-claim] OK: " task-id " заклеймлена агентом " agent))
+        (update-registry-status! registry task-id "in_progress")
+        (update-task-file-status! task-id "in_progress")
+        (println (str "[work-claim] OK: " task-id " заклеймлена агентом " agent " и переведена в in_progress"))
         (when (seq owned)
           (println (str "  owned_modules: " (str/join ", " owned))))
         (println "  single-agent режим: работайте в dev. Для параллельной работы используйте отдельный worktree (см. git-workflow.md).")))))

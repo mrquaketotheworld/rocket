@@ -45,21 +45,31 @@ layer: knowledge
 
 Команды самого фреймворка Rocket:
 
-- **lint документации:** `bb docs-lint`
-- **взять задачу:** `bb work-claim --task TASK-XXX`
-- **закрыть задачу:** `bb work-done --task TASK-XXX`
+- **bootstrap:** установить Babashka и обязательные инструменты pi, затем выполнить
+  `bb docs-lint` для проверки готовности документации.
+- **run:** N/A для core Rocket — это документационный фреймворк и набор локальных скриптов, а
+  не долгоживущий сервис. Запуск downstream-продукта объявляется в его engineering profile.
+- **test:** `bb docs-lint`.
+- **build:** N/A для core Rocket v0.1.0 — артефакт сборки не производится. Если появится
+  packaging/export, команда build станет обязательной частью этого профиля.
+- **lint документации:** `bb docs-lint`.
+- **взять задачу:** `bb work-claim --task TASK-XXX`.
+- **закрыть задачу:** `bb work-done --task TASK-XXX`.
 
-> Для downstream-проекта здесь обязаны быть объявлены его собственные команды:
-> **bootstrap** (установка зависимостей), **run** (запуск), **test** (тесты),
-> **build** (сборка). Без них reconstructability не выполняется.
+Для downstream-проекта здесь обязаны быть объявлены его собственные команды:
+**bootstrap** (установка зависимостей), **run** (запуск), **test** (тесты),
+**build** (сборка или явное N/A-обоснование, если продукт не собирается). Без них
+reconstructability не выполняется.
 
 ## Лестница верификации
 
 Для изменений в самом фреймворке:
 
 1. `bb docs-lint` — документация консистентна.
+2. Для изменений скриптов — ручная smoke-проверка затронутой команды (`bb work-claim`,
+   `bb work-done`) на тестовой/текущей задаче в пределах scope.
 
-> Downstream-проект объявляет свою лестницу (например: `npm run lint`, `npm test`, `npm run build`).
+Downstream-проект объявляет свою лестницу (например: `npm run lint`, `npm test`, `npm run build`).
 
 ## Граница reconstructability
 

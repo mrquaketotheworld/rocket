@@ -13,8 +13,27 @@
    :title "Зафиксировать правило no-edit-on-question",
    :status "done",
    :canonical_refs ["GOV-AUTONOMY-CONTRACT"],
-   :owned_modules ["AGENTS.md" "01-standards/autonomy-contract.md"]}],
- :next_id 3,
+   :owned_modules ["AGENTS.md" "01-standards/autonomy-contract.md"]}
+  {:id "TASK-003",
+   :title "Закрыть фундаментальные пробелы документации Rocket",
+   :status "done",
+   :canonical_refs
+   ["PROD-INTENT"
+    "PROD-SCOPE"
+    "PROJ-ENGINEERING"
+    "GOV-FOUNDATION-CONTRACT"
+    "GOV-EXECUTION-MODEL"
+    "GOV-GIT-WORKFLOW"
+    "GOV-DOC-CONTRACT"],
+   :owned_modules
+   ["README.md"
+    "AGENTS.md"
+    "01-standards"
+    "02-foundation"
+    "03-execution"
+    "04-templates"
+    "05-scripts"]}],
+ :next_id 4,
  :layer "execution",
  :doc_type "state",
  :owner "execution"}

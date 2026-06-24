@@ -17,6 +17,8 @@ layer: knowledge
 ## Решения
 
 - [ADR-0001](ADR-0001-local-git-single-operator.md) — локальный Git и модель одного оператора.
+- [ADR-0002](ADR-0002-docs-as-foundation.md) — документация как фундамент и языконезависимое ядро.
+- [ADR-0003](ADR-0003-markdown-edn-babashka.md) — Markdown, EDN и Babashka для лёгкой автоматизации.
 
 ## Шаблон
 
