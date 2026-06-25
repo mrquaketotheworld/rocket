@@ -29,6 +29,8 @@ layer: execution
 - TASK-008 выполнена: добавлены `bb verify`, task-aware `commit-lint` и проверка transient-правила `TODO.md`.
 - TASK-009 взята в работу: добавляется правило, что агент предлагает современные лучшие практики при устаревших технологиях/API/паттернах.
 - TASK-009: правило добавлено в `autonomy-contract.md` и `AGENTS.md`. Верификация: `bb verify` — OK.
+- TASK-010 взята в работу: исправляется stale `:last_updated` в `task-registry.edn` и усиливается автоматизация `work-claim`/`work-done`/`state-lint`.
+- TASK-010: canonical docs обновлены, `work-claim`/`work-done` теперь обновляют даты, `state-lint` ловит stale registry date. Верификация: `bb verify` — OK.
 
 ## Следующие шаги
 
@@ -51,6 +53,8 @@ layer: execution
 - ADR-0003
 - GOV-VERSIONING-POLICY
 - FEAT-STATE-LINT
+- FEAT-WORK-CLAIM
+- FEAT-WORK-DONE
 - FEAT-PROJECT-INIT-EXPORT
 - GOV-DOCUMENT-LIFECYCLE
 - GOV-LOCALIZATION-IDS

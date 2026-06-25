@@ -4,7 +4,7 @@ doc_id: FEAT-WORK-DONE
 title: Закрытие задачи
 status: active
 owner: product
-last_updated: 2026-06-24
+last_updated: 2026-06-25
 authority: canonical
 layer: knowledge
 ---
@@ -29,7 +29,8 @@ layer: knowledge
 Команда:
 
 - проверяет наличие активного claim;
-- переводит задачу в реестре в `done`;
+- переводит задачу в реестре и task file в `done`;
+- обновляет `last_updated` в task file и `:last_updated` в registry;
 - удаляет lock-файл;
 - напоминает, что push в remote запрещён без явной команды человека.
 
@@ -38,7 +39,8 @@ layer: knowledge
 ## Acceptance criteria
 
 - [ ] без активного claim команда завершается ошибкой;
-- [ ] успешная команда переводит запись реестра в `done`;
+- [ ] успешная команда переводит запись реестра и task file в `done`;
+- [ ] успешная команда обновляет `last_updated` в registry/task file;
 - [ ] успешная команда удаляет lock-файл;
 - [ ] task file, state и session согласованы до закрытия задачи;
 - [ ] remote push не выполняется автоматически.

@@ -38,3 +38,13 @@
 (defn read-edn [path]
   (when (fs/exists? path)
     (-> path str slurp clojure.edn/read-string)))
+
+(defn today []
+  (str (java.time.LocalDate/now)))
+
+(defn update-frontmatter-field [content field value]
+  (let [pattern (re-pattern (str "(?m)^" (name field) ":\\s*.*$"))
+        replacement (str (name field) ": " value)]
+    (if (re-find pattern content)
+      (str/replace-first content pattern replacement)
+      content)))

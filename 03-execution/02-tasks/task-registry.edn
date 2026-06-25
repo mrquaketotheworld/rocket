@@ -1,6 +1,6 @@
 {:doc_id "TASK-REGISTRY",
  :authority "operational",
- :last_updated "2026-06-24",
+ :last_updated "2026-06-25",
  :title "Реестр задач",
  :tasks
  [{:id "TASK-001",
@@ -111,8 +111,25 @@
    :status "done",
    :canonical_refs ["GOV-AUTONOMY-CONTRACT"],
    :owned_modules
-   ["AGENTS.md" "01-standards/autonomy-contract.md" "03-execution"]}],
- :next_id 10,
+   ["AGENTS.md" "01-standards/autonomy-contract.md" "03-execution"]}
+  {:id "TASK-010",
+   :title "Автоматизировать актуальность last_updated в task registry",
+   :status "done",
+   :canonical_refs
+   ["GOV-EXECUTION-STATE-CONTRACT"
+    "FEAT-STATE-LINT"
+    "FEAT-WORK-CLAIM"
+    "FEAT-WORK-DONE"
+    "PROJ-ENGINEERING"],
+   :owned_modules
+   ["01-standards/execution-state-contract.md"
+    "02-foundation/03-features/feat-state-lint.md"
+    "02-foundation/03-features/feat-work-claim.md"
+    "02-foundation/03-features/feat-work-done.md"
+    "02-foundation/02-project/engineering-profile.md"
+    "03-execution"
+    "05-scripts"]}],
+ :next_id 11,
  :layer "execution",
  :doc_type "state",
  :owner "execution"}

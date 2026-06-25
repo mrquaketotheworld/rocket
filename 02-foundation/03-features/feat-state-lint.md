@@ -4,7 +4,7 @@ doc_id: FEAT-STATE-LINT
 title: Проверка операционного состояния state-lint
 status: active
 owner: product
-last_updated: 2026-06-24
+last_updated: 2026-06-25
 authority: canonical
 layer: knowledge
 ---
@@ -23,6 +23,7 @@ session могут быть использованы агентом для пр�
 - валидность `task-registry.edn`;
 - уникальность task id;
 - корректность `next_id`;
+- формат `:last_updated` в registry и отсутствие stale registry date относительно task files;
 - наличие файла для каждой задачи из registry;
 - совпадение статуса задачи в registry и task file frontmatter;
 - обязательные секции task file;
@@ -35,7 +36,8 @@ session могут быть использованы агентом для пр�
 - [ ] при консистентном состоянии команда завершается с кодом 0;
 - [ ] при несогласованности команда печатает путь и причину;
 - [ ] done-задачи без evidence считаются ошибкой;
-- [ ] active tasks должны совпадать с registry.
+- [ ] active tasks должны совпадать с registry;
+- [ ] registry `:last_updated` не должен быть старее максимального `last_updated` среди файлов задач.
 
 ## Edge cases
 

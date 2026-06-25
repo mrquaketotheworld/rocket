@@ -44,7 +44,9 @@
   (let [path (task-file task-id)]
     (when (fs/exists? path)
       (let [content (slurp path)
-            updated (str/replace-first content #"(?m)^status:\s*\S+" (str "status: " status))]
+            updated (-> content
+                        (str/replace-first #"(?m)^status:\s*\S+" (str "status: " status))
+                        (common/update-frontmatter-field :last_updated (common/today)))]
         (spit path updated)))))
 
 (defn update-registry-status! [registry task-id status]
@@ -54,7 +56,9 @@
                         t))
                     (:tasks registry))]
     (spit (common/rel "03-execution" "02-tasks" "task-registry.edn")
-          (with-out-str (clojure.pprint/pprint (assoc registry :tasks tasks))))))
+          (with-out-str (clojure.pprint/pprint (assoc registry
+                                                      :last_updated (common/today)
+                                                      :tasks tasks))))))
 
 (defn -main []
   (let [m        (parse-args *command-line-args*)

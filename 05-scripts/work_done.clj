@@ -22,7 +22,9 @@
   (let [path (task-file task-id)]
     (when (fs/exists? path)
       (let [content (slurp path)
-            updated (str/replace-first content #"(?m)^status:\s*\S+" (str "status: " status))]
+            updated (-> content
+                        (str/replace-first #"(?m)^status:\s*\S+" (str "status: " status))
+                        (common/update-frontmatter-field :last_updated (common/today)))]
         (spit path updated)))))
 
 (defn -main []
@@ -44,7 +46,9 @@
                                (assoc t :status "done")
                                t))
                            (:tasks registry))]
-        (spit reg-path (with-out-str (clojure.pprint/pprint (assoc registry :tasks tasks)))))
+        (spit reg-path (with-out-str (clojure.pprint/pprint (assoc registry
+                                                                    :last_updated (common/today)
+                                                                    :tasks tasks)))))
       (update-task-file-status! task-id "done")
       (fs/delete lock-file)
       (println (str "[work-done] OK: " task-id " закрыта, claim снят, task file и registry переведены в done."))

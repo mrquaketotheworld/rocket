@@ -4,7 +4,7 @@ doc_id: PROJ-ENGINEERING
 title: Инженерный профиль
 status: active
 owner: project
-last_updated: 2026-06-23
+last_updated: 2026-06-25
 authority: canonical
 layer: knowledge
 ---
@@ -76,7 +76,8 @@ reconstructability не выполняется.
    `bb scripts-test`.
 3. Для изменений скриптов — `bb scripts-test` и/или ручная smoke-проверка затронутой команды
    (`bb work-claim`, `bb work-done`, `bb state-lint`, `bb project-init`, `bb commit-lint`) на
-   тестовой/текущей задаче в пределах scope.
+   тестовой/текущей задаче в пределах scope. Для изменений state automation проверяй также
+   negative case, где lint должен упасть на намеренно неконсистентном временном состоянии.
 4. После локального commit — `bb commit-lint`.
 
 Downstream-проект объявляет свою лестницу (например: `npm run lint`, `npm test`, `npm run build`).

@@ -23,6 +23,29 @@
 (defn todo-items [content]
   (re-seq #"(?m)^- \[([ xX])\]" content))
 
+(defn parse-date [s]
+  (try
+    (when (and s (re-matches #"\d{4}-\d{2}-\d{2}" s))
+      (java.time.LocalDate/parse s))
+    (catch Exception _ nil)))
+
+(defn task-file-last-updated [task-id]
+  (let [path (common/rel "03-execution" "02-tasks" (str task-id ".md"))]
+    (when (fs/exists? path)
+      (-> (slurp path) common/parse-frontmatter :last_updated parse-date))))
+
+(defn lint-registry-date! [errors registry tasks]
+  (let [registry-date (parse-date (:last_updated registry))
+        task-dates (keep (comp task-file-last-updated :id) tasks)]
+    (when-not registry-date
+      (err errors "task-registry.edn" ":last_updated должен быть датой YYYY-MM-DD"))
+    (when (and registry-date (seq task-dates))
+      (let [max-task-date (last (sort task-dates))]
+        (when (.isBefore registry-date max-task-date)
+          (err errors "task-registry.edn"
+               (str ":last_updated " (:last_updated registry)
+                    " старее максимальной даты файла задачи " max-task-date)))))))
+
 (defn lint-todo! [errors in-progress]
   (let [path (common/rel "TODO.md")]
     (when (fs/exists? path)
@@ -74,6 +97,7 @@
       (err errors "task-registry.edn" ":doc_id должен быть TASK-REGISTRY"))
     (when-not (integer? (:next_id registry))
       (err errors "task-registry.edn" ":next_id должен быть integer"))
+    (lint-registry-date! errors registry tasks)
     (let [ids (map :id tasks)]
       (doseq [[id group] (group-by identity ids)]
         (when (> (count group) 1)

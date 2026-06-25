@@ -4,7 +4,7 @@ doc_id: GOV-EXECUTION-STATE-CONTRACT
 title: Контракт операционного состояния
 status: active
 owner: framework-core
-last_updated: 2026-06-24
+last_updated: 2026-06-25
 authority: canonical
 layer: knowledge
 ---
@@ -22,7 +22,8 @@ layer: knowledge
 `03-execution/02-tasks/task-registry.edn` содержит:
 
 - `:doc_id` — всегда `"TASK-REGISTRY"`;
-- `:last_updated` — дата последнего изменения реестра;
+- `:last_updated` — дата последнего изменения реестра (`YYYY-MM-DD`); обновляется при любом
+  изменении списка задач, `:next_id` или статуса задачи в реестре;
 - `:next_id` — следующий свободный номер задачи;
 - `:tasks` — вектор задач.
 
@@ -49,7 +50,9 @@ ID считается занятым только когда есть и зап�
 - evidence верификации;
 - Definition of Done.
 
-Статус в frontmatter и статус в реестре должны совпадать.
+Статус в frontmatter и статус в реестре должны совпадать. `last_updated` в frontmatter файла
+задачи обновляется при изменении статуса задачи автоматизацией `work-claim`/`work-done` или
+при содержательном изменении файла вручную.
 
 ## current-state.edn
 
@@ -99,7 +102,8 @@ ID считается занятым только когда есть и зап�
 
 `bb state-lint` проверяет консистентность execution layer:
 
-- registry валиден и имеет корректный `:next_id`;
+- registry валиден, имеет корректный `:next_id` и дату `:last_updated` в формате `YYYY-MM-DD`;
+- registry `:last_updated` не старее максимального `last_updated` среди файлов задач;
 - каждая задача из registry имеет файл;
 - статус в registry совпадает со статусом во frontmatter задачи;
 - done-задачи содержат evidence и отмеченный DoD;
