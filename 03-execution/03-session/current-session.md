@@ -4,7 +4,7 @@ doc_id: SESSION-CURRENT
 title: Текущая сессия
 status: active
 owner: execution
-last_updated: 2026-06-24
+last_updated: 2026-06-25
 authority: operational
 layer: execution
 ---
@@ -27,6 +27,8 @@ layer: execution
 - TASK-006 выполнена: зафиксировано правило, что `TODO.md` — transient-файл только для текущей работы и очищается после выполнения всех пунктов.
 - TASK-007 выполнена: добавлены `bb commit-lint` и Git `commit-msg` hook для формата `TASK-XXX: ...`.
 - TASK-008 выполнена: добавлены `bb verify`, task-aware `commit-lint` и проверка transient-правила `TODO.md`.
+- TASK-009 взята в работу: добавляется правило, что агент предлагает современные лучшие практики при устаревших технологиях/API/паттернах.
+- TASK-009: правило добавлено в `autonomy-contract.md` и `AGENTS.md`. Верификация: `bb verify` — OK.
 
 ## Следующие шаги
 

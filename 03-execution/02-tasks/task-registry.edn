@@ -105,8 +105,14 @@
     "03-execution"
     "05-scripts"
     "TODO.md"
-    "bb.edn"]}],
- :next_id 9,
+    "bb.edn"]}
+  {:id "TASK-009",
+   :title "Зафиксировать правило предложения лучших практик",
+   :status "done",
+   :canonical_refs ["GOV-AUTONOMY-CONTRACT"],
+   :owned_modules
+   ["AGENTS.md" "01-standards/autonomy-contract.md" "03-execution"]}],
+ :next_id 10,
  :layer "execution",
  :doc_type "state",
  :owner "execution"}
