@@ -33,6 +33,8 @@ layer: execution
 - TASK-010: canonical docs обновлены, `work-claim`/`work-done` теперь обновляют даты, `state-lint` ловит stale registry date. Верификация: `bb verify` — OK.
 - TASK-011 взята в работу: добавляется матрица разрешения конфликтов truth в canonical docs.
 - TASK-011: матрица добавлена в `document-principles.md`, `sync-rules.md` ссылается на неё. Верификация: `bb verify` — OK.
+- TASK-012 взята в работу: добавляются обязательные skills `brainstorming` из `obra/superpowers` и `find-skills` в `PROJ-ENGINEERING` и `AGENTS.md`.
+- TASK-012: обязательные skills добавлены в `AGENTS.md` и `engineering-profile.md`. Верификация: `bb verify` — OK.
 
 ## Следующие шаги
 

@@ -16,9 +16,11 @@
   команды человека.
 - **Стек любой.** Язык продукта зафиксирован в `engineering-profile.md`. Не навязывай Clojure
   или другой стек — он используется только внутри самого фреймворка, если нужно.
-- **Обязательные инструменты pi.** До начала работы убедись, что установлены:
-  pi extension `pi-hermes-memory` через `pi install npm:pi-hermes-memory` и pi skill
-  `codespaces` через `npx skills add diskd-ai/codespaces` (глобально или в проекте).
+- **Обязательные инструменты pi.** До начала работы убедись, что у пользователя установлены:
+  pi extension `pi-hermes-memory` через `pi install npm:pi-hermes-memory`, pi skill
+  `codespaces` через `npx skills add diskd-ai/codespaces`, pi skill `brainstorming` из
+  `obra/superpowers` через `npx skills add obra/superpowers@brainstorming` и pi skill
+  `find-skills` через `npx skills add vercel-labs/skills@find-skills` (глобально или в проекте).
   Подробности — в [engineering-profile.md](02-foundation/02-project/engineering-profile.md).
 - **Вопрос — не команда на правки.** Если пользователь задаёт вопрос, отвечай на вопрос и не
   меняй файлы/код/Git/operational state. Правки делай только при явной команде на изменение.

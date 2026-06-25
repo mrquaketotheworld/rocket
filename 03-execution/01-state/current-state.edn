@@ -11,4 +11,4 @@
  :blockers []
  :health "green"
  :canonical_refs ["GOV-EXECUTION-MODEL" "GOV-GIT-WORKFLOW" "GOV-DOC-CONTRACT" "GOV-FOUNDATION-CONTRACT" "GOV-AUTONOMY-CONTRACT" "GOV-EXECUTION-STATE-CONTRACT" "GOV-LANGUAGE-EXTENSION-CONTRACT" "GOV-MEMORY-POLICY" "GOV-SECURITY-SECRETS" "GOV-VERSIONING-POLICY" "GOV-DOCUMENT-LIFECYCLE" "GOV-LOCALIZATION-IDS" "PROJ-ENGINEERING" "FEAT-STATE-LINT" "FEAT-PROJECT-INIT-EXPORT" "ADR-0001" "ADR-0002" "ADR-0003"]
- :verification_summary "TASK-011: матрица разрешения конфликтов truth добавлена. Верификация: bb verify OK."}
+ :verification_summary "TASK-012: обязательные skills brainstorming и find-skills добавлены в docs. Верификация: bb verify OK."}

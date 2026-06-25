@@ -136,8 +136,16 @@
    :owned_modules
    ["01-standards/document-principles.md"
     "01-standards/sync-rules.md"
+    "03-execution"]}
+  {:id "TASK-012",
+   :title "Добавить обязательные skills brainstorming и find-skills",
+   :status "done",
+   :canonical_refs ["PROJ-ENGINEERING"],
+   :owned_modules
+   ["AGENTS.md"
+    "02-foundation/02-project/engineering-profile.md"
     "03-execution"]}],
- :next_id 12,
+ :next_id 13,
  :layer "execution",
  :doc_type "state",
  :owner "execution"}

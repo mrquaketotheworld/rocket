@@ -37,9 +37,13 @@ layer: knowledge
   `pi install npm:pi-hermes-memory`.
 - **codespaces** — pi skill, устанавливается командой
   `npx skills add diskd-ai/codespaces`.
+- **brainstorming** — pi skill из `obra/superpowers`, устанавливается командой
+  `npx skills add obra/superpowers@brainstorming`.
+- **find-skills** — pi skill, устанавливается командой
+  `npx skills add vercel-labs/skills@find-skills`.
 
-Проверь наличие этого extension и skill до взятия первой задачи; при отсутствии — установи их
-указанными командами.
+Проверь наличие этого extension и этих skills до взятия первой задачи; при отсутствии — установи
+их указанными командами.
 
 ## Команды
 
