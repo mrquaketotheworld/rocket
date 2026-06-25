@@ -4,7 +4,7 @@ doc_id: GOV-DOCUMENT-PRINCIPLES
 title: Принципы документации
 status: active
 owner: framework-core
-last_updated: 2026-06-23
+last_updated: 2026-06-25
 authority: canonical
 layer: knowledge
 ---
@@ -32,6 +32,20 @@ Authority определяется не только порядком, но и *
 
 Если два документа говорят о разных типах фактов, смотри на владельца этого типа, а не на
 порядок в списке. Если код противоречит canonical — прав canonical, код обновляется.
+
+## Матрица разрешения конфликтов
+
+| Конфликт | Побеждает | Действие агента |
+| --- | --- | --- |
+| Код или тесты противоречат feature doc | Feature doc | Обновить код/тесты по feature doc или завести задачу на приведение в соответствие. |
+| Код или тесты противоречат standards/project truth/ADR | Соответствующий canonical owner факта | Остановить попытку подгонять docs под баг; обновить реализацию или завести задачу. |
+| Operational state противоречит canonical truth | Canonical truth | Обновить `03-execution` и связанные задачи/состояние. |
+| README/обзор противоречит standards или foundation docs | Standards/foundation docs | Обновить README как навигационный обзор, не менять canonical truth ради README. |
+| Feature doc противоречит product scope/product intent | Product truth | Остановиться, оформить canonical gap или обновить feature после явного решения. |
+| Feature doc противоречит ADR | Владелец типа факта: behavior — feature, архитектурное обязательство — ADR | Определить тип факта; если оба документа претендуют на один факт — остановиться и оформить конфликт canonical truth. |
+| Два feature docs противоречат друг другу | Нет автоматического победителя | Остановиться и оформить canonical gap до реализации. |
+| Task registry/current session противоречат task file | Контракт execution state и актуальный task file/registry по типу факта | Синхронизировать execution артефакты, затем прогнать `bb state-lint`. |
+| Пользовательский запрос противоречит canonical truth | Canonical truth до явного изменения docs | Предупредить пользователя; если нужно новое поведение — сначала обновить canonical docs. |
 
 ## Принципы
 

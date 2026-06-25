@@ -31,6 +31,8 @@ layer: execution
 - TASK-009: правило добавлено в `autonomy-contract.md` и `AGENTS.md`. Верификация: `bb verify` — OK.
 - TASK-010 взята в работу: исправляется stale `:last_updated` в `task-registry.edn` и усиливается автоматизация `work-claim`/`work-done`/`state-lint`.
 - TASK-010: canonical docs обновлены, `work-claim`/`work-done` теперь обновляют даты, `state-lint` ловит stale registry date. Верификация: `bb verify` — OK.
+- TASK-011 взята в работу: добавляется матрица разрешения конфликтов truth в canonical docs.
+- TASK-011: матрица добавлена в `document-principles.md`, `sync-rules.md` ссылается на неё. Верификация: `bb verify` — OK.
 
 ## Следующие шаги
 
@@ -39,6 +41,8 @@ layer: execution
 ## Входы
 
 - GOV-EXECUTION-MODEL
+- GOV-DOCUMENT-PRINCIPLES
+- GOV-SYNC-RULES
 - GOV-GIT-WORKFLOW
 - ADR-0001
 - PROJ-ENGINEERING

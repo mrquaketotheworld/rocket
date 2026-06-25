@@ -128,8 +128,16 @@
     "02-foundation/03-features/feat-work-done.md"
     "02-foundation/02-project/engineering-profile.md"
     "03-execution"
-    "05-scripts"]}],
- :next_id 11,
+    "05-scripts"]}
+  {:id "TASK-011",
+   :title "Добавить матрицу разрешения конфликтов truth",
+   :status "done",
+   :canonical_refs ["GOV-DOCUMENT-PRINCIPLES" "GOV-SYNC-RULES"],
+   :owned_modules
+   ["01-standards/document-principles.md"
+    "01-standards/sync-rules.md"
+    "03-execution"]}],
+ :next_id 12,
  :layer "execution",
  :doc_type "state",
  :owner "execution"}

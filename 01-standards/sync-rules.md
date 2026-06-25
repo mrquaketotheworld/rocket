@@ -4,7 +4,7 @@ doc_id: GOV-SYNC-RULES
 title: Правила синхронизации
 status: active
 owner: framework-core
-last_updated: 2026-06-23
+last_updated: 2026-06-25
 authority: canonical
 layer: knowledge
 ---
@@ -46,7 +46,8 @@ layer: knowledge
 
 1. Обновить canonical документ — владелец этого факта.
 2. Прогнать `bb docs-lint`.
-3. Провести impact analysis: какие feature docs, задачи, код и тесты затронуты.
+3. Провести impact analysis: какие feature docs, задачи, код и тесты затронуты. При конфликте
+   источников использовать матрицу из [document-principles.md](document-principles.md#матрица-разрешения-конфликтов).
 4. Обновить или завести задачи на приведение кода в соответствие.
 5. Реализовать изменение кода по обновлённой правде.
 6. Прогнать лестницу верификации проекта.
